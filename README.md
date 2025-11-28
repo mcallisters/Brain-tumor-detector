@@ -61,7 +61,7 @@ Brain-Tumor-Detector/
 
 ## 🚀 Features
 
-### Data Preprocessing (`preprocessing.py`)
+### Data Preprocessing (`preprocessing.ipynb`)
 - **Duplicate Detection**: Perceptual hashing to identify and remove near-duplicate images
 - **Outlier Removal**: Z-score analysis for brightness anomalies
 - **Quality Control**: Low-variance detection to filter blank/corrupted images
@@ -69,7 +69,7 @@ Brain-Tumor-Detector/
 - **Aspect Ratio Correction**: Center-crop images with extreme aspect ratios
 - **Statistical Reporting**: Before/after preprocessing statistics
 
-### Model Training (`train_model.py`)
+### Model Training (`brain_tumor_training_resnet18.py`)
 - **Architecture**: ResNet18 (pre-trained on ImageNet)
 - **Transfer Learning**: Fine-tuned all layers on brain MRI dataset
 - **Data Augmentation**: Random flips, rotations, color jitter
@@ -77,19 +77,19 @@ Brain-Tumor-Detector/
 - **Early Stopping**: Patience-based stopping to prevent overfitting
 - **Threshold Tuning**: Optimal decision threshold selection on validation set
 
-### Model Evaluation (`histogram_visualization.py`)
+### Model Evaluation (`histogram_visualization_prob_resnet18.py`)
 - **Confusion Matrix**: True positives, false positives, true negatives, false negatives
 - **ROC Curve**: ROC-AUC score visualization
 - **Probability Distributions**: Histogram analysis by class
 - **Sample Visualization**: Display predictions with confidence scores
 
-### Model Interpretability (`gradcam.py`)
+### Model Interpretability (`gradcam_brain_tumor_resnet18.py`)
 - **GradCAM Heatmaps**: Visualize which regions the model focuses on
 - **Batch Processing**: Generate explanations for multiple images
 - **Overlay Visualization**: Heatmap overlays on original images
 - **Decision Validation**: Verify model is looking at relevant brain regions
 
-### Web Application (`app.py`)
+### Web Application (`streamlit_app.py`)
 - **Single Image Upload**: Upload and analyze individual MRI scans
 - **Batch Processing**: Analyze multiple images simultaneously
 - **Probability Visualization**: Interactive probability charts
@@ -150,7 +150,7 @@ networkx>=3.1.0
 Preprocess raw MRI images (remove duplicates, outliers, standardize size):
 
 ```bash
-python scripts/preprocessing.py
+python scripts/preprocessing.ipynb
 ```
 
 **What it does**:
@@ -209,7 +209,7 @@ Test Set F1 (yes class): 0.8312
 Generate performance visualizations and analyze predictions:
 
 ```bash
-python scripts/histogram_visualization.py
+python scripts/histogram-visualization-prob-resnet18.py
 ```
 
 **What it does**:
